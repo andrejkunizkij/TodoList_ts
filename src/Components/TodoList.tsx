@@ -33,5 +33,4 @@ class TodoList extends React.Component<TodoListProps, {}> {
 
     }
 }
-console.log(TodoList)
 export default TodoList;

@@ -18,7 +18,7 @@ class TodoForm extends React.Component<TodoFormProps, TodoFormState> {
         }
     }
 
-    handleChange = (event:React.ChangeEvent<HTMLInputElement>) => {
+    handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
             text: event.target.value,
         })

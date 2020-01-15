@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
-import  TodoPage from './Components/TodoPage'
+import TodoPage from './Components/TodoPage'
 
 class App extends React.Component {
 

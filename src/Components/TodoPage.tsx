@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+//@ts-nocheck
 import React from 'react'
 import '../App.css';
 import TodoList from './TodoList'
@@ -59,9 +58,8 @@ class TodoPage extends React.Component<ITodoProps, IAppState> {
     //     console.log('addLi');
     // };
 
-
     render() {
-        let list = this.props.tasks.map((item) => {
+        let list = this.props.tasks.map((item: ITask) => {
             return (
                 <TodoList
                     // check={this.check}
@@ -76,9 +74,7 @@ class TodoPage extends React.Component<ITodoProps, IAppState> {
 
         return (
             <React.Fragment>
-                <TodoForm
-                    addTodo={this.addTodo}
-                />
+                <TodoForm/>
                 <ul>
                     {list}
                 </ul>
@@ -87,7 +83,7 @@ class TodoPage extends React.Component<ITodoProps, IAppState> {
     }
 }
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state) {
     return {
         tasks: state.tasks
     }
@@ -96,7 +92,7 @@ function mapStateToProps(state: any) {
 function mapDispathToProps(dispatch) {
     return  {
         completeTodo: () => dispatch({type:'COMPLETE_TODO'}),
-        deleteTodo: id => dispatch({type:'DELETE_TODO', payload: id})
+        deleteTodo: (id: number) => dispatch({type:'DELETE_TODO', payload: id})
     }
 }
 

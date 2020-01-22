@@ -1,13 +1,13 @@
-// @ts-nocheck
+//@ts-nocheck
 import '../App.css';
 
-export const inititalState: any = {
+export const inititalState = {
     tasks: [
         // {newLi: 'first item', done: false, id: Date.now()}
     ],
 };
 
-export default function rootReducer(state: any = inititalState, action: any) {
+export default function rootReducer(state = inititalState, action) {
 
     switch (action.type) {
         case 'ADD_TODO':
@@ -24,7 +24,7 @@ export default function rootReducer(state: any = inititalState, action: any) {
         case 'COMPLETE_TODO':
             console.log('Complete')
             let index = 0;
-            const item = state.tasks.find((task, idx) => {
+            const item = state.tasks.find((task, idx: number) => {
                 if(task.id === action.payload) {
                     index = idx;
                     return task

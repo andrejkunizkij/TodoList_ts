@@ -1,5 +1,4 @@
-// @ts-nocheck
-
+//@ts-nocheck
 import React from 'react'
 import '../App.css';
 import {connect} from 'react-redux'
@@ -48,8 +47,8 @@ function mapStateToProps(state: any) {
 
 function mapDispathToProps(dispatch) {
     return  {
-        check: id => dispatch({type:'COMPLETE_TODO', payload: id }),
-        deleteLi: id => dispatch({type:'DELETE_TODO', payload: id})
+        check: (id: number) => dispatch({type:'COMPLETE_TODO', payload: id }),
+        deleteLi: (id: number) => dispatch({type:'DELETE_TODO', payload: id})
     }
 }
 

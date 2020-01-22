@@ -1,11 +1,14 @@
+// @ts-nocheck
+
 import React from 'react'
 import '../App.css';
+import {connect} from 'react-redux'
 
-interface  TodoListProps {
+interface TodoListProps {
     done: boolean;
-    check(id: number):void
+    check(id: number): void
     name: string
-    deleteLi(id:number): void
+    deleteLi(id: number): void
     id: number
 }
 
@@ -20,17 +23,35 @@ class TodoList extends React.Component<TodoListProps, {}> {
     };
 
     render() {
-        return (<div>
-            <div className='newLi'>
-                <li className={this.props.done ? 'newLiTextDec' : undefined}
-                    onClick={this.handleClick}
-                >
-                    {this.props.name}
-                </li>
-                <button onClick={this.handleClickDelete}>Delete</button>
+        return (
+            <div>
+                <div className='newLi'>
+                    <li className={this.props.done ? 'newLiTextDec' : undefined}
+                        onClick={this.handleClick}
+                    >
+                        {this.props.name}
+                    </li>
+                    <button onClick={this.handleClickDelete}>Delete</button>
+                </div>
             </div>
-        </div>)
+        )
 
     }
 }
-export default TodoList;
+
+
+function mapStateToProps(state: any) {
+    return {
+        tasks: state.tasks
+    }
+}
+
+function mapDispathToProps(dispatch) {
+    return  {
+        check: id => dispatch({type:'COMPLETE_TODO', payload: id }),
+        deleteLi: id => dispatch({type:'DELETE_TODO', payload: id})
+    }
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(TodoList);
+

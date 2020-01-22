@@ -4,6 +4,7 @@
   align-items: center;
   flex-direction: column;
   font-family: "Arial";
+  margin-top: 20px;
 }
 
 .main input {
@@ -59,4 +60,15 @@ li:hover {
 
 input:focus {
   background-color: azure;
+}
+
+a {
+  margin: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  color: blue;
+}
+
+a.active {
+  color: red;
 }

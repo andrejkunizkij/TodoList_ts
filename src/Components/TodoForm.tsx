@@ -1,8 +1,11 @@
+// @ts-nocheck
+
 import React from 'react'
 import '../App.css';
+import {connect} from "react-redux";
 
 interface TodoFormProps {
-    addLi(title: string): void
+    addTodo(title: string): void
 }
 
 interface TodoFormState {
@@ -20,12 +23,12 @@ class TodoForm extends React.Component<TodoFormProps, TodoFormState> {
 
     handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         this.setState({
-            text: event.target.value,
+            text: event.target.value
         })
     };
 
     handleClick = () => {
-        this.props.addLi(this.state.text);
+        this.props.addTodo(this.state.text);
         this.setState({
             text: ''
         })
@@ -45,6 +48,14 @@ class TodoForm extends React.Component<TodoFormProps, TodoFormState> {
     }
 }
 
-export default TodoForm
+
+function mapDispatchToProps(dispatch: any) {
+    return {
+        addTodo: title => dispatch({type: 'ADD_TODO', payload: title}),
+    }
+}
+
+export default connect(null, mapDispatchToProps)(TodoForm)
+
 
 

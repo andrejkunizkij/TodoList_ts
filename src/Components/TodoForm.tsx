@@ -37,6 +37,7 @@ class TodoForm extends React.Component<TodoFormProps, TodoFormState> {
         return (
             <div>
                 <input
+                    type="text"
                     id='input'
                     value={this.state.text}
                     onChange={this.handleChange}

@@ -1,4 +1,5 @@
 //@ts-nocheck
+
 import React from 'react'
 import '../App.css';
 import {connect} from 'react-redux'
@@ -39,7 +40,7 @@ class TodoList extends React.Component<TodoListProps, {}> {
 }
 
 
-function mapStateToProps(state: any) {
+function mapStateToProps(state) {
     return {
         tasks: state.tasks
     }

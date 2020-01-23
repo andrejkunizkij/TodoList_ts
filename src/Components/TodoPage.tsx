@@ -1,8 +1,8 @@
 //@ts-nocheck
+
 import React from 'react'
 import '../App.css';
 import TodoList from './TodoList'
-import TodoForm from "./TodoForm";
 import {connect} from 'react-redux'
 
 
@@ -74,7 +74,6 @@ class TodoPage extends React.Component<ITodoProps, IAppState> {
 
         return (
             <React.Fragment>
-                <TodoForm/>
                 <ul>
                     {list}
                 </ul>

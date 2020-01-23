@@ -4,6 +4,7 @@ import TodoPage from './Components/TodoPage'
 import {Route, NavLink, Switch} from 'react-router-dom'
 import TodoForm from "./Components/TodoForm";
 import TodoList from "./Components/TodoList";
+import TodoFormPage from "./Components/TodoSeparatePage"
 
 class App extends React.Component {
 
@@ -18,7 +19,7 @@ class App extends React.Component {
                 </nav>
 
                 <Switch>
-                    <Route path="/form" component={TodoForm}/>
+                    <Route path="/form" component={TodoFormPage}/>
                     <Route path="/list" component={TodoPage}/>
                     <Route path="/" exact render={() => <h1>Todo List</h1>}
                     />

@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import React from 'react'
 import '../App.css';
 import {connect} from 'react-redux'
@@ -39,19 +37,12 @@ class TodoList extends React.Component<TodoListProps, {}> {
     }
 }
 
-
-function mapStateToProps(state) {
-    return {
-        tasks: state.tasks
-    }
-}
-
-function mapDispathToProps(dispatch) {
+function mapDispathToProps(dispatch: any) {
     return  {
         check: (id: number) => dispatch({type:'COMPLETE_TODO', payload: id }),
         deleteLi: (id: number) => dispatch({type:'DELETE_TODO', payload: id})
     }
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(TodoList);
+export default connect(null, mapDispathToProps)(TodoList);
 

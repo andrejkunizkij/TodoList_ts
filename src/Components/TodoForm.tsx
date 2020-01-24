@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import React from 'react'
 import '../App.css';
 import {connect} from "react-redux";
@@ -50,7 +48,7 @@ class TodoForm extends React.Component<TodoFormProps, TodoFormState> {
 }
 
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: any) {
     return {
         addTodo: (title: string) => dispatch({type: 'ADD_TODO', payload: title}),
     }
